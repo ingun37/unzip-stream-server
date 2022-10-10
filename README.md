@@ -4,8 +4,11 @@ Stream unzipped data from .zip files.
 
 # How to build
 
+Run the github action or
+
 ```shell
-docker build
+docker build . -t ingun37/unzip-stream-server:latest
+docker push -t ingun37/unzip-stream-server:latest
 ```
 
 # How to use
