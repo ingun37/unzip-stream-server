@@ -8,7 +8,7 @@ Run the github action or
 
 ```shell
 docker build . -t ingun37/unzip-stream-server:latest
-docker push -t ingun37/unzip-stream-server:latest
+docker push ingun37/unzip-stream-server:latest
 ```
 
 # How to use
