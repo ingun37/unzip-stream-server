@@ -46,5 +46,7 @@ streamUnzip =
 
 someFunc :: IO ()
 someFunc = do
+  print "port is "
+  print $ port theConf
   createDirectoryIfMissing True userContentsDirName
   simpleHTTP theConf $ handlers
