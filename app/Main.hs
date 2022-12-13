@@ -7,6 +7,7 @@ import qualified Data.ByteString.Lazy as L
 import Control.Monad.Trans (MonadIO (liftIO))
 import Data.ByteString.Lazy (fromStrict)
 import Data.ByteString.Lazy.UTF8 (fromString)
+import Control.Monad (msum)
 
 main :: IO ()
 main = someFunc
@@ -32,7 +33,7 @@ handlers =
   do
     addHeaderM "Access-Control-Allow-Origin" "*"
     decodeBody myPolicy
-    toResponse <$> streamUnzip
+    toResponse <$> msum [streamUnzip, dir "streamunzip" streamUnzip]
 
 streamUnzip :: ServerPart L.ByteString 
 streamUnzip = 
